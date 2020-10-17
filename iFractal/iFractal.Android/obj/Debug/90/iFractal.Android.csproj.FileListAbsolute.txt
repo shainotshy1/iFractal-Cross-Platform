@@ -1,0 +1,7 @@
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\build.props
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\adb.props
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\iFractal.Android.csprojAssemblyReference.cache
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
+C:\Users\shaij\source\repos\iFractal\iFractal\iFractal.Android\obj\Debug\90\res.flag

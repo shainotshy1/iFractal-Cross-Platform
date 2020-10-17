@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharpFormsDemos.Settings"
+             BackgroundColor="#1D162E"
+             Title="Settings">
+    <ContentPage.Content>
+        <TableView HasUnevenRows="True">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Padding="30,20,30,0">
+                            <Label TextColor="White" Text="The generated fractals are composed of two colors: macro and micro. The macro color dominates the generated fractal image while the micro fills in the more detailed areas of the fractal. The blend option higlights all three colors throughout the fractal."/>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal">
+                                <Label FontSize="Medium" VerticalTextAlignment="Center" TextColor="#E9740E" Text="Color Option: " HorizontalTextAlignment="Start"/>
+                                <Picker x:Name="colorMethods" SelectedIndexChanged="Picker_SelectedIndexChanged" TextColor="White" HorizontalOptions="StartAndExpand" WidthRequest="120"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Padding="30,10,30,0">
+                            <Label TextColor="White" Text="The larger the iterations, the more accurate the fractal is although it takes exponentially more time with higher iteration values. For zoomed out fractal images, lower iterations are recommended." />
+                            <Stepper x:Name="stepper1" Increment="20" Minimum="20" Maximum="1400" ValueChanged="stepper_ValueChanged"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="#E9740E" FontSize="Medium" Text="Iterations: " />
+                                <Label TextColor="White" FontSize="Medium" Text="{Binding Source={x:Reference stepper1},Path=Value,StringFormat='{0:F0}'}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Padding="30,10,30,0">
+                            <Label TextColor="White" Text="The render quality is the quality of non downloaded fractal generations; the large the render quality, the longer the fractal will take to generate."/>
+                            <Stepper x:Name="stepper2" Increment="50" Minimum="50" Maximum="1000" ValueChanged="stepper_ValueChanged"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="#E9740E" FontSize="Medium" Text="Render Quality: " />
+                                <Label TextColor="White" FontSize="Medium" Text="{Binding Source={x:Reference stepper2},Path=Value,StringFormat='{0:F0}x{0:F0}'}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

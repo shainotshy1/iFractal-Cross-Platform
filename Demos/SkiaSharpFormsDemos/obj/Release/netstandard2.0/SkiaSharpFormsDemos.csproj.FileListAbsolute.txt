@@ -1,0 +1,16 @@
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.csprojAssemblyReference.cache
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\Basics\BitmapDissolvePage.xaml.g.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\Bitmaps\ScalingModesPage.xaml.g.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\Bitmaps\SpinPaintPage.xaml.g.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\Settings.xaml.g.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.AssemblyInfoInputs.cache
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.AssemblyInfo.cs
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.csproj.CoreCompileInputs.cache
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\bin\Release\netstandard2.0\SkiaSharpFormsDemos.dll.config
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\bin\Release\netstandard2.0\SkiaSharpFormsDemos.deps.json
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\bin\Release\netstandard2.0\SkiaSharpFormsDemos.dll
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\bin\Release\netstandard2.0\SkiaSharpFormsDemos.pdb
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.dll
+C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos\obj\Release\netstandard2.0\SkiaSharpFormsDemos.pdb

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharpFormsDemos.MainPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             BackgroundColor="#1D162E"
+             x:Name="carouselPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage >
+        <ContentPage.Content >
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.8*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Grid.Row="0" Grid.Column="0" Scale="0.33" HorizontalOptions="Start" VerticalOptions="Center" Source="settingsPicture" BackgroundColor="Transparent" Clicked="ImageButton_Clicked"/>
+                <Label Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0" Text="iFractal" FontFamily="Bellerose.ttf#Bellerose" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Scale="0.22" BackgroundColor="Transparent" Source="list" Clicked="ImageButton_Clicked_1" VerticalOptions="Center" HorizontalOptions="End" />
+                <StackLayout Spacing="20" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="Center" HorizontalOptions="Center">
+                    <!--<StackLayout HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal">
+                    <StackLayout Spacing="18">
+                        <Label VerticalTextAlignment="Center" TextColor="White" Text="Blend" HorizontalTextAlignment="Start"/>
+                        <Label VerticalTextAlignment="Center" TextColor="White" Text="BW" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout >
+                        <Switch x:Name="switchColor" OnColor="#E9740E" PropertyChanged="switchColor_PropertyChanged"/>
+                        <Switch x:Name="switchColorGreyScale" OnColor="#E9740E" PropertyChanged="switchColorGreyScale_PropertyChanged"/>
+                    </StackLayout>-->
+                </StackLayout>
+                <BoxView Margin="10" BackgroundColor="#E9740E" VerticalOptions="End" HeightRequest="7" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <RelativeLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                    <ListView x:Name="loadingText" VerticalScrollBarVisibility="Never"
+                          RelativeLayout.YConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    ElementName=canvasImage,
+                    Factor=-0.06,
+                    Property=Height}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding .}" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="End" VerticalOptions="End" HorizontalOptions="Center"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RelativeLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <StackLayout HorizontalOptions="StartAndExpand">
+                        <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" Text="Macro" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox Color="Red" x:Name="redMacro" Scale="1.5" CheckedChanged="checkBoxMacro_CheckedChanged"/>
+                            <CheckBox Color="Green" x:Name="greenMacro" Scale="1.5" CheckedChanged="checkBoxMacro_CheckedChanged"/>
+                            <CheckBox Color="Blue" x:Name="blueMacro" Scale="1.5" CheckedChanged="checkBoxMacro_CheckedChanged"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+
+                    <StackLayout>
+                        <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" Text="Micro" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox Color="Red" x:Name="redMicro" Scale="1.5" CheckedChanged="checkBoxMicro_CheckedChanged"/>
+                            <CheckBox Color="Green" x:Name="greenMicro" Scale="1.5" CheckedChanged="checkBoxMicro_CheckedChanged"/>
+                            <CheckBox Color="Blue" x:Name="blueMicro" Scale="1.5" CheckedChanged="checkBoxMicro_CheckedChanged"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <AbsoluteLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" >
+
+                    <skiaforms:SKCanvasView PaintSurface="canvasImageFast_PaintSurface"  x:Name="canvasImageFast"
+                                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                AbsoluteLayout.LayoutBounds="0.5,0.18,0.9,0.7" AbsoluteLayout.LayoutFlags="All"/>
+                    <skiaforms:SKCanvasView PaintSurface="OnCanvasViewPaintSurface" x:Name="canvasImage"
+                                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                AbsoluteLayout.LayoutBounds="0.5,0.18,0.9,0.7" AbsoluteLayout.LayoutFlags="All"/>
+
+                    <StackLayout Orientation="Horizontal"
+                                 AbsoluteLayout.LayoutBounds="0,1,1,0.2" AbsoluteLayout.LayoutFlags="All">
+                        <ImageButton HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Source="download" BackgroundColor="Transparent" Scale="0.6" Clicked="ImageButton_Clicked_2"/>
+                        <ImageButton HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="stopButton" Source="Cancel" Scale="0.39" BackgroundColor="Transparent" Clicked="ImageButton_Clicked_3"/>
+                        <ImageButton HorizontalOptions="End" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="createButton" Source="play" Scale="1" BackgroundColor="Transparent" Clicked="Create"/>
+
+                    </StackLayout>
+
+                </AbsoluteLayout>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Reset" Clicked="ToolbarItem_Clicked"/>
+            <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked_1"/>
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Padding="20">
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="Advanced Options" FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" FontSize="32"/>
+                    <StackLayout Orientation="Horizontal" Padding="40,8,40,8" VerticalOptions="Center">
+                        <Button BackgroundColor="Transparent" TextColor="CornflowerBlue" Text="Reset" HorizontalOptions="StartAndExpand" FontSize="Medium" VerticalOptions="Center" Clicked="ToolbarItem_Clicked"/>
+                        <Button FontSize="17" Text="Create" TextColor="White" BackgroundColor="CornflowerBlue" CornerRadius="40" WidthRequest="90" HeightRequest="40" Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Button BackgroundColor="Transparent" TextColor="CornflowerBlue" Text="Save" VerticalOptions="Center" FontSize="Medium" Clicked="ToolbarItem_Clicked_1"/>
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout Padding="20,40,20,20" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="30">
+                    <StackLayout Spacing="60">
+                        <Slider x:Name="riSlider" ThumbColor="#DFD782" MinimumTrackColor="#DFD782" Maximum="1" Minimum="0" ValueChanged="Slider_ValueChanged"/>
+                        <Slider x:Name="ciSlider" ThumbColor="#7CEBDE" MinimumTrackColor="#7CEBDE" Maximum="1" Minimum="0" ValueChanged="Slider_ValueChanged"/>
+                        <Slider x:Name="lSlider" ThumbColor="#F0827A" MinimumTrackColor="#F0827A" Maximum="1" Minimum="0" ValueChanged="Slider_ValueChanged"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Padding="0,10,0,0">
+                            <StackLayout Orientation="Horizontal" >
+                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="X Value:" TextColor="#DFD782"  VerticalOptions="Center"/>
+                                <Editor TextChanged="Entry_TextChanged" WidthRequest="100" x:Name="riEntry" FontSize="Medium" TextColor="#DFD782" PlaceholderColor="#DFD782" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="Y Value:" TextColor="#7CEBDE" VerticalOptions="Center"/>
+                                <Editor TextChanged="Entry_TextChanged" WidthRequest="100" x:Name="ciEntry" FontSize="Medium" TextColor="#7CEBDE" PlaceholderColor="#7CEBDE" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="Length:" TextColor="#F0827A" VerticalOptions="Center"/>
+                                <Editor TextChanged="Entry_TextChanged" WidthRequest="100" x:Name="lEntry" FontSize="Medium" TextColor="#F0827A" PlaceholderColor="#F0827A" />
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand" >
+                            <Label Text="Macro" FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White"/>
+                            <ListView WidthRequest="50" x:Name="colorListAdvancedMacro" VerticalScrollBarVisibility="Never" SeparatorVisibility="None" ItemSelected="colorListAdvancedMacro_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" Text="{Binding .}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Micro" FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White"/>
+                            <ListView WidthRequest="50" x:Name="colorListAdvancedMicro" VerticalScrollBarVisibility="Never" SeparatorVisibility="None" ItemSelected="colorListAdvancedMacro_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" Text="{Binding .}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+</CarouselPage>

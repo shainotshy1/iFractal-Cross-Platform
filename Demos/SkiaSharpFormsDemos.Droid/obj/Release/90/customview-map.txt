@@ -1,0 +1,39 @@
+@string/appbar_scrolling_view_behavior;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+@string/appbar_scrolling_view_behavior;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+alpha;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+alpha;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+android.support.design.widget.AppBarLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.AppBarLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.design.widget.AppBarLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
+android.support.design.widget.BottomNavigationView;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
+android.support.design.widget.CoordinatorLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.design.widget.CoordinatorLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.design.widget.CoordinatorLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
+android.support.design.widget.TabLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.design.widget.TabLayout;obj\Release\90\res\layout\tabbar.xml
+android.support.v7.widget.RecyclerView;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\flyoutcontent.xml
+android.support.v7.widget.Toolbar;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml
+android.support.v7.widget.Toolbar;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\shellcontent.xml
+android.support.v7.widget.Toolbar;obj\Release\90\res\layout\toolbar.xml
+attr;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\attrs.xml
+declare-styleable;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\attrs.xml
+FrameLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
+item;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\styles.xml
+item;obj\Release\90\res\values\styles.xml
+LinearLayout;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\bottomtablayout.xml
+resources;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\attrs.xml
+resources;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\strings.xml
+resources;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\styles.xml
+resources;obj\Release\90\res\values\styles.xml
+set;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+set;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\enterfromright.xml
+set;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+set;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\exittoright.xml
+string;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\strings.xml
+style;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\values\styles.xml
+style;obj\Release\90\res\values\styles.xml
+translate;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\enterfromleft.xml
+translate;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\enterfromright.xml
+translate;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\exittoleft.xml
+translate;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\anim\exittoright.xml
+xamarin.forms.platform.android.appcompat.FormsViewPager;C:\Users\shaij\OneDrive\Desktop\Xamarin_Forms___SkiaSharp_and_Xamarin_Forms (3)\Demos\SkiaSharpFormsDemos.Droid\obj\Release\90\lp\42\jl\res\layout\rootlayout.xml

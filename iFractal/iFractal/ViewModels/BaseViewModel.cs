@@ -81,6 +81,24 @@ namespace iFractal.ViewModels
             set { SetProperty(ref ySeed, value); }
         }
 
+        string image1 = string.Empty;
+        public string Image1
+        {
+            get { return image1; }
+            set { SetProperty(ref image1, value); }
+        }
+        string image2 = string.Empty;
+        public string Image2
+        {
+            get { return image2; }
+            set { SetProperty(ref image2, value); }
+        }
+        string title = string.Empty;
+        public string Title
+        {
+            get { return title; }
+            set { SetProperty(ref title, value); }
+        }
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)

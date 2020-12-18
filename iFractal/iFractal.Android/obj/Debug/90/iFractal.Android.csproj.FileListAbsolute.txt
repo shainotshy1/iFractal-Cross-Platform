@@ -501,3 +501,7 @@ C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debu
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\res\drawable\mandelbrotbutton.png
+C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\res\drawable\mandelbrotbuttonoff.png
+C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\res\drawable\juliabuttonoff.png
+C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal.Android\obj\Debug\90\res\drawable\juliabutton.png

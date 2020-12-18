@@ -11,62 +11,92 @@ namespace iFractal.ViewModels
         {
             XSeed = "X Value:";
             YSeed = "Y Value";
-            
+
+            Image1 = "mandelbrotButtonOff.png";
+            Image2 = "juliaButton.png";
+
             Visibility1 = true;
 
-            SwitchOptions = new Command(() =>
+            Title = "Mandelbrot Options";
+
+            SwitchButton1 = new Command(() =>
             {
-                double cache1 = CacheXValue;
-                double cache2 = CacheYValue;
-
-                CacheXValue = RiValue;
-                CacheYValue = CiValue;
-
-                Visibility1 = !Visibility1;
-                if (Visibility1)
+                if(Image1 == "mandelbrotButton.png")
                 {
-                    XSeed = "X Value:";
-                    YSeed = "Y Value";
-
-                    Min = 0;
-
-                    if (cache1 == 0.0000000000001)
-                    {
-                        cache1 = 0;
-                    }
-                    if (cache2 == 0.0000000000001)
-                    {
-                        cache2 = 0;
-                    }
-                }
-                else
-                {
-                    XSeed = "X Seed:";
-                    YSeed = "Y Seed";
-
-                    Min = -1;
-
-                    if (cache1 == 0)
-                    {
-                        cache1 = 0.0000000000001;
-                    }
-                    if (cache2 == 0)
-                    {
-                        cache2 = 0.0000000000001;
-                    }
+                    SwitchOptions();
                 }
 
-                
+                Image1 = "mandelbrotButtonOff.png";
+                Image2 = "juliaButton.png";
 
-                RiValue = cache1;
-                CiValue = cache2;
+                Title = "Mandelbrot Options";
 
-                UpdateX = Convert.ToString(cache1);
-                UpdateY = Convert.ToString(cache2);
+            });
+            SwitchButton2 = new Command(() =>
+            {
+                if (Image1 == "mandelbrotButtonOff.png")
+                {
+                    SwitchOptions();
+                }
 
+                Image1 = "mandelbrotButton.png";
+                Image2 = "juliaButtonOff.png";
+
+                Title = "Julia Set Options";
             });
         }
 
-        public Command SwitchOptions { get; }
+        private void SwitchOptions()
+        {
+            double cache1 = CacheXValue;
+            double cache2 = CacheYValue;
+
+            CacheXValue = RiValue;
+            CacheYValue = CiValue;
+
+            Visibility1 = !Visibility1;
+            if (Visibility1)
+            {
+                XSeed = "X Value:";
+                YSeed = "Y Value";
+
+                Min = 0;
+
+                if (cache1 == 0.0000000000001)
+                {
+                    cache1 = 0;
+                }
+                if (cache2 == 0.0000000000001)
+                {
+                    cache2 = 0;
+                }
+            }
+            else
+            {
+                XSeed = "X Seed:";
+                YSeed = "Y Seed";
+
+                Min = -1;
+
+                if (cache1 == 0)
+                {
+                    cache1 = 0.0000000000001;
+                }
+                if (cache2 == 0)
+                {
+                    cache2 = 0.0000000000001;
+                }
+            }
+
+
+
+            RiValue = cache1;
+            CiValue = cache2;
+
+            UpdateX = Convert.ToString(cache1);
+            UpdateY = Convert.ToString(cache2);
+        }
+        public Command SwitchButton1 { get; }
+        public Command SwitchButton2 { get; }
     }
 }

@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("iFractal.Settings.xaml", "Settings.xaml", typeof(global::iFractal.Settings))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("iFractal.Views.Settings.xaml", "Views/Settings.xaml", typeof(global::iFractal.Settings))]
 
 namespace iFractal {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Settings.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Settings.xaml")]
     public partial class Settings : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

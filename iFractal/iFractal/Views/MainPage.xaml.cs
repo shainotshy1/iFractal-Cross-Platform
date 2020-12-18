@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using iFractal.ViewModels;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using SQLite;
 using System;
@@ -1055,9 +1056,9 @@ namespace iFractal
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            riSlider.Value = 0.000;
-            ciSlider.Value = 0.000;
-            lSlider.Value = 0.000;
+            riSlider.Value = 0;
+            ciSlider.Value = 0;
+            lSlider.Value = 0;
 
             riEntry.Text = Convert.ToString(riSlider.Value);
             ciEntry.Text = Convert.ToString(ciSlider.Value);
@@ -1069,6 +1070,25 @@ namespace iFractal
 
         private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+            UpdateValues();
+
+        }
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            UpdateValues();
+            UpdateTextValues();
+
+            if (riEntry.Text == "0")
+            {
+                riSlider.Value = 0.0000000000001;
+            }
+            if(ciEntry.Text == "0")
+            {
+                ciSlider.Value = 0.0000000000001;
+            }
+        }
+        private void UpdateValues()
+        {
             if (!AdvancedModes.isSetting)
             {
                 riEntry.Text = Convert.ToString(riSlider.Value);
@@ -1079,10 +1099,14 @@ namespace iFractal
                 AdvancedModes.complexInput = ciSlider.Value;
                 AdvancedModes.lengthInput = lSlider.Value;
             }
-
         }
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateTextValues();
+        }
+
+        private void UpdateTextValues()
         {
             if (!AdvancedModes.isSetting)
             {
@@ -1120,12 +1144,12 @@ namespace iFractal
                     }
                 }
 
-                if (riEntry.Text == "")
+                if (riEntry.Text == ""|| riEntry.Text == "1E-13")
                 {
                     riEntry.Text = "0.0";
 
                 }
-                if (ciEntry.Text == "")
+                if (ciEntry.Text == "" || ciEntry.Text == "1E-13")
                 {
                     ciEntry.Text = "0.0";
 
@@ -1153,9 +1177,5 @@ namespace iFractal
             }
         }
 
-        private void julia_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-
-        }
     }
 }

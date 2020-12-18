@@ -16,7 +16,6 @@ C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\bin\Debug\netsta
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\bin\Debug\netstandard2.0\iFractal.dll
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\bin\Debug\netstandard2.0\ref\iFractal.dll
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\bin\Debug\netstandard2.0\iFractal.pdb
-C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\iFractal.csprojAssemblyReference.cache
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\iFractal.AssemblyInfoInputs.cache
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\iFractal.AssemblyInfo.cs
@@ -27,3 +26,4 @@ C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netsta
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\iFractal.pdb
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\Views\Settings.xaml.g.cs
+C:\Users\Shai\Desktop\iFractal-Cross-Platform\iFractal\iFractal\obj\Debug\netstandard2.0\iFractal.csprojAssemblyReference.cache

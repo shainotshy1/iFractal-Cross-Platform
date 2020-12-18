@@ -104,7 +104,7 @@
         <ContentPage.Content>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
@@ -171,9 +171,9 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
-                    <ImageButton HorizontalOptions="Start" Source="{Binding Image1}" Scale="0.42" Command="{Binding SwitchButton1}" BackgroundColor="White" CornerRadius="50" Clicked="Button_Clicked_1"/>
+                    <ImageButton HorizontalOptions="Start" Source="{Binding Image1}" Scale="0.42" Command="{Binding SwitchButton1}" BackgroundColor="White" CornerRadius="50" Clicked="Button_Clicked_1" BorderColor="{Binding BorderColor1}" BorderWidth="7"/>
                     <BoxView Color="Transparent" WidthRequest="100" HorizontalOptions="CenterAndExpand" />
-                    <ImageButton HorizontalOptions="End" Source="{Binding Image2}" Scale="0.42" BackgroundColor="White" CornerRadius="50" Command="{Binding SwitchButton2}" Clicked="Button_Clicked_1" />
+                    <ImageButton HorizontalOptions="End" Source="{Binding Image2}" Scale="0.42" BackgroundColor="White" CornerRadius="50" Command="{Binding SwitchButton2}" Clicked="Button_Clicked_1" BorderColor="{Binding BorderColor2}" BorderWidth="7"/>
                 </StackLayout>
 
             </Grid>

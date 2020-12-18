@@ -13,5 +13,6 @@ namespace iFractal
         public double SavedReal { get; set; }
         public double SavedComplex { get; set; }
         public double SavedLength { get; set; }
+        public bool IsJuliaSet { get; set; }
     }
 }

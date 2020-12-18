@@ -29,6 +29,17 @@ namespace iFractal
         public static SQLiteAsyncConnection _connectionOpen;
         public static ObservableCollection<Recipe> OpenedApp;
 
+        public static bool createAdvanced;
+        public static double realInput;
+        public static double complexInput;
+        public static double lengthInput;
+        public static string macroInput;
+        public static string microInput;
+
+        public static int julia;
+
+        public static bool isSetting;
+
         public static readonly int integer = 16;
 
         public MainPage()
@@ -101,6 +112,8 @@ namespace iFractal
         //Creates fractal if pressed create on Advanced page
         protected override async void OnAppearing()
         {
+            julia = -1;
+
             isCreating = false;
 
             await _connection.CreateTableAsync<FractalRecipe>();
@@ -164,12 +177,12 @@ namespace iFractal
             canvasImage.IsVisible = true;
             canvasImageFast.IsVisible = true;
 
-            if (AdvancedModes.createAdvanced)
+            if (createAdvanced)
             {
                 canvasImage.IsVisible = true;
                 canvasImageFast.IsVisible = true;
 
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
+                GenerateMandelbrotZoom(realInput, complexInput, lengthInput, macroInput, microInput,-1);
 
             }
 
@@ -187,34 +200,34 @@ namespace iFractal
             /*** ADVANCED PAGE ONAPPEARING CODE BELOW ***/
 
             isCreating = false;
-            AdvancedModes.isSetting = true;
+            isSetting = true;
 
             colorListAdvancedMicro.ItemsSource = listColorsAdvancedMicro;
             colorListAdvancedMacro.ItemsSource = listColorsAdvancedMacro;
 
-            if (AdvancedModes.microInput == null)
+            if (microInput == null)
             {
-                AdvancedModes.microInput = "Red";
-                AdvancedModes.macroInput = "Red";
+                microInput = "Red";
+                macroInput = "Red";
 
                 colorListAdvancedMicro.SelectedItem = listColorsAdvancedMicro[0];
                 colorListAdvancedMacro.SelectedItem = listColorsAdvancedMacro[0];
             }
             else
             {
-                colorListAdvancedMacro.SelectedItem = AdvancedModes.macroInput;
-                colorListAdvancedMicro.SelectedItem = AdvancedModes.microInput;
+                colorListAdvancedMacro.SelectedItem = macroInput;
+                colorListAdvancedMicro.SelectedItem = microInput;
             }
 
-            riEntry.Text = Convert.ToString(AdvancedModes.realInput);
-            ciEntry.Text = Convert.ToString(AdvancedModes.complexInput);
-            lEntry.Text = Convert.ToString(AdvancedModes.lengthInput);
+            riEntry.Text = Convert.ToString(realInput);
+            ciEntry.Text = Convert.ToString(complexInput);
+            lEntry.Text = Convert.ToString(lengthInput);
 
-            riSlider.Value = AdvancedModes.realInput;
-            ciSlider.Value = AdvancedModes.complexInput;
-            lSlider.Value = AdvancedModes.lengthInput;
+            riSlider.Value = realInput;
+            ciSlider.Value = complexInput;
+            lSlider.Value = lengthInput;
 
-            AdvancedModes.isSetting = false;
+            isSetting = false;
 
             if (OpenedApp.Count == 0)
             {
@@ -252,9 +265,9 @@ namespace iFractal
             await createButton.ScaleTo(1.1, 200, Easing.SpringOut);
             await createButton.ScaleTo(1, 300, Easing.SpringIn);
 
-            if (AdvancedModes.createAdvanced)
+            if (createAdvanced)
             {
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
+                GenerateMandelbrotZoom(realInput, complexInput, lengthInput, macroInput, microInput,julia);
             }
             else
             {
@@ -288,6 +301,22 @@ namespace iFractal
             {
                 ri = 0.2;
                 ci = 0;
+            }
+
+            if (index > integer - 1)
+            {
+                if (SavedFractals[item - integer].IsJuliaSet)
+                {
+                    ri = 0.2;
+                    ci = 0;
+                    l = 1;
+                }
+            }
+            if(index == -2)
+            {
+                ri = 0.2;
+                ci = 0;
+                l = 1;
             }
 
             if (loading.Count == 0)
@@ -388,6 +417,19 @@ namespace iFractal
 
             //julia set index
             if(index >= 12 && index <= integer - 1)
+            {
+                numi = new Complex(seed1, seed2);
+            }
+
+            if(index > integer - 1)
+            {
+                if(SavedFractals[item - integer].IsJuliaSet)
+                {
+                    numi = new Complex(seed1, seed2);
+                }
+            }
+
+            if(julia == -2)
             {
                 numi = new Complex(seed1, seed2);
             }
@@ -706,7 +748,7 @@ namespace iFractal
 
             if (clicked)
             {
-                AdvancedModes.createAdvanced = false;
+                createAdvanced = false;
             }
         }
 
@@ -754,14 +796,14 @@ namespace iFractal
                     string downloadMacro;
                     string downloadMicro;
 
-                    if (AdvancedModes.createAdvanced)
+                    if (createAdvanced)
                     {
-                        downloadMacro = AdvancedModes.macroInput;
-                        downloadMicro = AdvancedModes.microInput;
+                        downloadMacro = macroInput;
+                        downloadMicro = microInput;
 
-                        ri = AdvancedModes.realInput;
-                        ci = AdvancedModes.complexInput;
-                        l = AdvancedModes.lengthInput;
+                        ri = realInput;
+                        ci = complexInput;
+                        l = lengthInput;
                     }
                     else
                     {
@@ -1015,7 +1057,16 @@ namespace iFractal
 
             if (newName != null && newName != "")
             {
-                var recipe = new FractalRecipe { FractalName = newName, SavedComplex = ciSlider.Value, SavedLength = lSlider.Value, SavedReal = riSlider.Value };
+                bool check = (riSlider.Minimum == -1);
+
+                double lengthValue = lSlider.Value;
+
+                if (check)
+                {
+                    lengthValue = 1;
+                }
+
+                var recipe = new FractalRecipe { FractalName = newName, SavedComplex = ciSlider.Value, SavedLength = lengthValue, SavedReal = riSlider.Value, IsJuliaSet = check };
 
                 await _connection.InsertAsync(recipe);
                 SavedFractals.Add(recipe);
@@ -1030,11 +1081,11 @@ namespace iFractal
             double x;
             if (Double.TryParse(riEntry.Text, out x) && Double.TryParse(ciEntry.Text, out x) && Double.TryParse(lEntry.Text, out x))
             {
-                AdvancedModes.createAdvanced = true;
+                createAdvanced = true;
 
-                AdvancedModes.realInput = Convert.ToDouble(riEntry.Text);
-                AdvancedModes.complexInput = Convert.ToDouble(ciEntry.Text);
-                AdvancedModes.lengthInput = Convert.ToDouble(lEntry.Text);
+                realInput = Convert.ToDouble(riEntry.Text);
+                complexInput = Convert.ToDouble(ciEntry.Text);
+                lengthInput = Convert.ToDouble(lEntry.Text);
 
                 isCreating = true;
 
@@ -1044,9 +1095,19 @@ namespace iFractal
                 canvasImage.IsVisible = true;
                 canvasImageFast.IsVisible = true;
 
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
+                int indexValue = -1;
+                julia = -1; 
 
-                AdvancedModes.createAdvanced = false;
+                if(riSlider.Minimum == -1)
+                {
+                    indexValue = -2;
+                    julia = -2;
+                    lengthInput = 1;
+                }
+
+                GenerateMandelbrotZoom(riSlider.Value, ciSlider.Value, lengthInput, macroInput, microInput,indexValue);
+
+                createAdvanced = false;
             }
             else
             {
@@ -1089,15 +1150,15 @@ namespace iFractal
         }
         private void UpdateValues()
         {
-            if (!AdvancedModes.isSetting)
+            if (!isSetting)
             {
                 riEntry.Text = Convert.ToString(riSlider.Value);
                 ciEntry.Text = Convert.ToString(ciSlider.Value);
                 lEntry.Text = Convert.ToString(lSlider.Value);
 
-                AdvancedModes.realInput = riSlider.Value;
-                AdvancedModes.complexInput = ciSlider.Value;
-                AdvancedModes.lengthInput = lSlider.Value;
+                realInput = riSlider.Value;
+                complexInput = ciSlider.Value;
+                lengthInput = lSlider.Value;
             }
         }
 
@@ -1108,7 +1169,7 @@ namespace iFractal
 
         private void UpdateTextValues()
         {
-            if (!AdvancedModes.isSetting)
+            if (!isSetting)
             {
                 double i = 0.00000;
                 if (riEntry.Text != "")
@@ -1159,9 +1220,9 @@ namespace iFractal
                     lEntry.Text = "1.0";
 
                 }
-                AdvancedModes.realInput = riSlider.Value;
-                AdvancedModes.complexInput = ciSlider.Value;
-                AdvancedModes.lengthInput = lSlider.Value;
+                realInput = riSlider.Value;
+                complexInput = ciSlider.Value;
+                lengthInput = lSlider.Value;
             }
         }
 
@@ -1169,11 +1230,11 @@ namespace iFractal
         {
             if (sender == colorListAdvancedMacro)
             {
-                AdvancedModes.macroInput = (string)(colorListAdvancedMacro.SelectedItem);
+                macroInput = (string)(colorListAdvancedMacro.SelectedItem);
             }
             else
             {
-                AdvancedModes.microInput = (string)(colorListAdvancedMicro.SelectedItem);
+                microInput = (string)(colorListAdvancedMicro.SelectedItem);
             }
         }
 

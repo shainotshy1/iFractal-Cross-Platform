@@ -99,6 +99,18 @@ namespace iFractal.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+        string borderColor1 = string.Empty;
+        public string BorderColor1
+        {
+            get { return borderColor1; }
+            set { SetProperty(ref borderColor1, value); }
+        }
+        string borderColor2 = string.Empty;
+        public string BorderColor2
+        {
+            get { return borderColor2; }
+            set { SetProperty(ref borderColor2, value); }
+        }
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)

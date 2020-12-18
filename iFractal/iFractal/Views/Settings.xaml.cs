@@ -89,7 +89,7 @@ namespace iFractal
 
         protected override async void OnDisappearing()
         {
-            AdvancedModes.createAdvanced = false;
+            MainPage.createAdvanced = false;
 
             int length = QualityOptions.Count;
 

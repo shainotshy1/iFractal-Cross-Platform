@@ -19,6 +19,9 @@ namespace iFractal.ViewModels
 
             Title = "Mandelbrot Options";
 
+            BorderColor1 = "#61F8FA";
+            BorderColor2 = "Transparent";
+
             SwitchButton1 = new Command(() =>
             {
                 if(Image1 == "mandelbrotButton.png")
@@ -28,6 +31,9 @@ namespace iFractal.ViewModels
 
                 Image1 = "mandelbrotButtonOff.png";
                 Image2 = "juliaButton.png";
+
+                BorderColor1 = "#61F8FA";
+                BorderColor2 = "Transparent";
 
                 Title = "Mandelbrot Options";
 
@@ -42,8 +48,12 @@ namespace iFractal.ViewModels
                 Image1 = "mandelbrotButton.png";
                 Image2 = "juliaButtonOff.png";
 
+                BorderColor1 = "Transparent";
+                BorderColor2 = "#61F8FA";
+
                 Title = "Julia Set Options";
             });
+
         }
 
         private void SwitchOptions()

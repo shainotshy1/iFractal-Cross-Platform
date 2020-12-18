@@ -26,15 +26,6 @@
                 <Label Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0" Text="iFractal" FontFamily="Bellerose.ttf#Bellerose" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Scale="0.22" BackgroundColor="Transparent" Source="list" Clicked="ImageButton_Clicked_1" VerticalOptions="Center" HorizontalOptions="End" />
                 <StackLayout Spacing="20" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="Center" HorizontalOptions="Center">
-                    <!--<StackLayout HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal">
-                    <StackLayout Spacing="18">
-                        <Label VerticalTextAlignment="Center" TextColor="White" Text="Blend" HorizontalTextAlignment="Start"/>
-                        <Label VerticalTextAlignment="Center" TextColor="White" Text="BW" HorizontalTextAlignment="Start"/>
-                    </StackLayout>
-                    <StackLayout >
-                        <Switch x:Name="switchColor" OnColor="#E9740E" PropertyChanged="switchColor_PropertyChanged"/>
-                        <Switch x:Name="switchColorGreyScale" OnColor="#E9740E" PropertyChanged="switchColorGreyScale_PropertyChanged"/>
-                    </StackLayout>-->
                 </StackLayout>
                 <BoxView Margin="10" BackgroundColor="#E9740E" VerticalOptions="End" HeightRequest="7" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
                 <RelativeLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
@@ -64,8 +55,11 @@
                         </StackLayout>
                     </StackLayout>
 
-                    <BoxView WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
-
+                    <StackLayout HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                        <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" Text="Julia" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                        <CheckBox Color="White" x:Name="julia" Scale="1.5" HorizontalOptions="CenterAndExpand" CheckedChanged="julia_CheckedChanged"/>
+                    </StackLayout>
+                    
                     <StackLayout>
                         <Label FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" Text="Micro" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
                         <StackLayout Orientation="Horizontal">

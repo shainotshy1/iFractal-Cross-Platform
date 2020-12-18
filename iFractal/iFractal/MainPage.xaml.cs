@@ -767,7 +767,7 @@ namespace iFractal
                         downloadMacro = selectedColor;
                         downloadMicro = selecterColorMicro;
 
-                        if (item <= 12)
+                        if (item <= integer - 1)
                         {
                             ri = varList1[item];
                             ci = varList2[item];

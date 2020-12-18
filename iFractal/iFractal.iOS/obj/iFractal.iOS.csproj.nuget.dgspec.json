@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj": {}
+    "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj": {
+    "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj",
         "projectName": "iFractal.iOS",
-        "projectPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj",
-        "packagesPath": "C:\\Users\\shaij\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.iOS\\obj\\",
+        "projectPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.iOS\\iFractal.iOS.csproj",
+        "packagesPath": "C:\\Users\\Shai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\shaij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj": {
-                "projectPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj"
+              "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj": {
+                "projectPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj"
               }
             }
           }
@@ -81,20 +81,20 @@
         }
       }
     },
-    "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj": {
+    "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj",
+        "projectUniqueName": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj",
         "projectName": "iFractal",
-        "projectPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj",
-        "packagesPath": "C:\\Users\\shaij\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\obj\\",
+        "projectPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj",
+        "packagesPath": "C:\\Users\\Shai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\shaij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -160,7 +160,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

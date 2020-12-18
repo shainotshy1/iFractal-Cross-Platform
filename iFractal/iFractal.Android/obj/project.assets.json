@@ -2381,24 +2381,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shaij\\.nuget\\packages\\": {},
+    "C:\\Users\\Shai\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.Android\\iFractal.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.Android\\iFractal.Android.csproj",
       "projectName": "iFractal.Android",
-      "projectPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.Android\\iFractal.Android.csproj",
-      "packagesPath": "C:\\Users\\shaij\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal.Android\\obj\\",
+      "projectPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.Android\\iFractal.Android.csproj",
+      "packagesPath": "C:\\Users\\Shai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\shaij\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Shai\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2412,8 +2412,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj": {
-              "projectPath": "C:\\Users\\shaij\\source\\repos\\iFractal\\iFractal\\iFractal\\iFractal.csproj"
+            "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj": {
+              "projectPath": "C:\\Users\\Shai\\Desktop\\iFractal-Cross-Platform\\iFractal\\iFractal\\iFractal.csproj"
             }
           }
         }

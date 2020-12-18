@@ -166,7 +166,7 @@ namespace iFractal
                 canvasImage.IsVisible = true;
                 canvasImageFast.IsVisible = true;
 
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput);
+                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
 
             }
 
@@ -251,18 +251,18 @@ namespace iFractal
 
             if (AdvancedModes.createAdvanced)
             {
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput);
+                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
             }
             else
             {
                 if (item <= 12)
                 {
-                    GenerateMandelbrotZoom(varList1[item], varList2[item], varList3[item], selectedColor, selecterColorMicro);
+                    GenerateMandelbrotZoom(varList1[item], varList2[item], varList3[item], selectedColor, selecterColorMicro,item);
                 }
 
                 else
                 {
-                    GenerateMandelbrotZoom(SavedFractals[item - 13].SavedReal, SavedFractals[item - 13].SavedComplex, SavedFractals[item - 13].SavedLength, selectedColor, selecterColorMicro);
+                    GenerateMandelbrotZoom(SavedFractals[item - 13].SavedReal, SavedFractals[item - 13].SavedComplex, SavedFractals[item - 13].SavedLength, selectedColor, selecterColorMicro,item);
                 }
 
             }
@@ -275,7 +275,7 @@ namespace iFractal
         //Mandelbrot generation using real value, complex value, zoom length 0 - 1, and colors
 
         public static bool isRunning;
-        public async void GenerateMandelbrotZoom(double ri, double ci, double l, string macroColor, string microColor)
+        public async void GenerateMandelbrotZoom(double ri, double ci, double l, string macroColor, string microColor,int index)
         {
             if (loading.Count == 0)
             {
@@ -324,7 +324,7 @@ namespace iFractal
 
                         complix = new Complex((i - (14 * heightExport / 20.0)) / (widthExport / 3.0), (j - (widthExport / 2.0)) / (heightExport / 3.0 * widthExport / heightExport));
 
-                        int onoff = (int)(Iterate(complix) * 255);
+                        int onoff = (int)(Iterate(complix,index) * 255);
 
                         updatePixelInputs(macroColor, microColor, onoff);
 
@@ -369,9 +369,16 @@ namespace iFractal
             }
         }
         //Make iterations of calculations: the more iterations, the more accurate the curve
-        public static double Iterate(Complex num)
+        public static double Iterate(Complex num,int index)
         {
             Complex numi = num;
+
+            //julia set index
+            if(index == 10)
+            {
+                numi = new Complex(-0.7, 0.46);
+            }
+            
 
             for (int convergence = 0; convergence < iterations; convergence++)
             {
@@ -808,7 +815,7 @@ namespace iFractal
 
                             complix = new Complex((i - (14 * heightExport / 20.0)) / (widthExport / 3.0), (j - (widthExport / 2.0)) / (heightExport / 3.0 * widthExport / heightExport));
 
-                            int onoff = (int)(Iterate(complix) * 255);
+                            int onoff = (int)(Iterate(complix,item) * 255);
 
                             updatePixelInputs(downloadMacro, downloadMicro, onoff);
 
@@ -1027,7 +1034,7 @@ namespace iFractal
                 canvasImage.IsVisible = true;
                 canvasImageFast.IsVisible = true;
 
-                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput);
+                GenerateMandelbrotZoom(AdvancedModes.realInput, AdvancedModes.complexInput, AdvancedModes.lengthInput, AdvancedModes.macroInput, AdvancedModes.microInput,-1);
 
                 AdvancedModes.createAdvanced = false;
             }

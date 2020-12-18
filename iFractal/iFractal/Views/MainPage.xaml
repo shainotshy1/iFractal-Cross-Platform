@@ -122,7 +122,7 @@
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Padding="20,40,20,20" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="30">
+                <StackLayout Padding="20,40,20,20" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="15">
                     <StackLayout Spacing="50">
                         <Slider Value="{Binding RiValue}" x:Name="riSlider" ThumbColor="#DFD782" MinimumTrackColor="#DFD782" Maximum="1" Minimum="{Binding Min}" ValueChanged="Slider_ValueChanged"/>
                         <Slider Value="{Binding CiValue}" x:Name="ciSlider" ThumbColor="#7CEBDE" MinimumTrackColor="#7CEBDE" Maximum="1" Minimum="{Binding Min}" ValueChanged="Slider_ValueChanged"/>

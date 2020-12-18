@@ -604,7 +604,7 @@
 
 	/* 64: iFractal.dll */
 	/* uncompressed_file_size */
-	.long	88576
+	.long	89088
 	/* loaded */
 	.byte	0
 	/* data */

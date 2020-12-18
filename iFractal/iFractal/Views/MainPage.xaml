@@ -131,11 +131,11 @@
                     <StackLayout Orientation="Horizontal">
                         <StackLayout Padding="0,10,0,0">
                             <StackLayout Orientation="Horizontal" >
-                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="X Value:" TextColor="#DFD782"  VerticalOptions="Center"/>
+                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="{Binding XSeed}" TextColor="#DFD782"  VerticalOptions="Center"/>
                                 <Editor Text="{Binding UpdateX}" TextChanged="Entry_TextChanged" WidthRequest="100" x:Name="riEntry" FontSize="Medium" TextColor="#DFD782" PlaceholderColor="#DFD782" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="Y Value:" TextColor="#7CEBDE" VerticalOptions="Center"/>
+                                <Label WidthRequest="100" HorizontalOptions="StartAndExpand" FontSize="Medium" Text="{Binding YSeed}" TextColor="#7CEBDE" VerticalOptions="Center"/>
                                 <Editor Text="{Binding UpdateY}" TextChanged="Entry_TextChanged" WidthRequest="100" x:Name="ciEntry" FontSize="Medium" TextColor="#7CEBDE" PlaceholderColor="#7CEBDE" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" IsVisible="{Binding Visibility1}">

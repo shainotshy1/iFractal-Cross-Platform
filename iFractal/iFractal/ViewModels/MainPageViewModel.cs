@@ -9,6 +9,8 @@ namespace iFractal.ViewModels
     {
         public MainPageViewModel()
         {
+            XSeed = "X Value:";
+            YSeed = "Y Value";
             
             Visibility1 = true;
 
@@ -23,6 +25,9 @@ namespace iFractal.ViewModels
                 Visibility1 = !Visibility1;
                 if (Visibility1)
                 {
+                    XSeed = "X Value:";
+                    YSeed = "Y Value";
+
                     Min = 0;
 
                     if (cache1 == 0.0000000000001)
@@ -36,6 +41,9 @@ namespace iFractal.ViewModels
                 }
                 else
                 {
+                    XSeed = "X Seed:";
+                    YSeed = "Y Seed";
+
                     Min = -1;
 
                     if (cache1 == 0)

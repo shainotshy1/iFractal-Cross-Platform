@@ -89,7 +89,7 @@ namespace iFractal
         public static int intInput2;
         public static int intInput3;
 
-        public static List<string> fractalList = new List<string>{"Full Mandelbrot","Front Half","Crack","Swirl","Spiral","Girl With Braids","Spiky Mini Mandelbrot","Spiky Tail","Tunnel","Hole","Unconnected Julia","Inner Hole","Spiky Mini Mandelbrot 2"};
+        public static List<string> fractalList;
 
         //Bitmap set to low automatically
         public static SKBitmap bitmap = new SKBitmap(400,400,false);
@@ -230,15 +230,15 @@ namespace iFractal
 
         protected override void OnDisappearing()
         {
-            fractalList = new List<string> { "Full Mandelbrot", "Front Half", "Crack", "Swirl", "Spiral", "Girl With Braids", "Spiky Mini Mandelbrot", "Spiky Tail", "Tunnel", "Hole", "Unconnected Julia", "Inner Hole", "Spiky Mini Mandelbrot 2" };
+            fractalList = new List<string> { "Full Mandelbrot", "Front Half", "Crack", "Swirl", "Spiral", "Girl With Braids", "Spiky Mini Mandelbrot", "Spiky Tail", "Tunnel", "Hole", "Inner Hole", "Unconnected Julia", "Twisty" };
 
             base.OnDisappearing();
         }
 
         //List of preset values for different fractals already discovered
-        public static double[] varList1 = new double[] { 0.0, 0.2, 0.4, 0.45, 0.45057, 0.4513, 0.305, 0.10725, 0.10725556, 0.107255653, 0.2, 0.10725566, 0.74934 };
-        public static double[] varList2 = new double[] { 0.0, 0.35, 0.4, 0.45, 0.4505, 0.44961, 0.4, 0.4970, 0.49740059, 0.497400682, 0.0, 0.4974006898, 0.2943 };
-        public static double[] varList3 = new double[] { 1.0, 0.3, 0.1, 0.005, 0.0005, 0.002, 0.02, 0.0011, 0.0000002, 0.000000018, 1.0, 0.000000003, 0.000022 };
+        public static double[] varList1 = new double[] { 0.0, 0.2, 0.4, 0.45, 0.45057, 0.4513, 0.305, 0.10725, 0.10725556, 0.107255653,  0.10725565993, 0.2, 0.74934 };
+        public static double[] varList2 = new double[] { 0.0, 0.35, 0.4, 0.45, 0.4505, 0.44961, 0.4, 0.4970, 0.49740059, 0.497400682,  0.49740068956, 0.0, 0.2943 };
+        public static double[] varList3 = new double[] { 1.0, 0.3, 0.1, 0.005, 0.0005, 0.002, 0.02, 0.0011, 0.0000002, 0.000000018,  0.00000000345, 1.0, 0.0000219 };
 
         
         public static int item;
@@ -374,7 +374,7 @@ namespace iFractal
             Complex numi = num;
 
             //julia set index
-            if(index == 10)
+            if(index == 11)
             {
                 numi = new Complex(-0.7, 0.46);
             }
@@ -614,90 +614,102 @@ namespace iFractal
             {
                 int setItem = fractalOptions.IndexOf(option);
                 clicked = true;
-
+                bool _continue = true;
                 if (setItem <= 12)
                 {
-                    string action = await DisplayActionSheet("Fractal Actions", "Cancel", null, "Set Fractal", "Info", "Advanced");
+                    while (_continue)
+                    {
+                        _continue = false;
+                        string action = await DisplayActionSheet("Fractal Actions", "Cancel", null, "Set Fractal", "Info", "Advanced");
 
-                    if (action == "Set Fractal")
-                    {
-                        item = setItem;
+                        if (action == "Set Fractal")
+                        {
+                            item = setItem;
 
-                        await DisplayAlert("Fractal Set", "The current set fractal is: " + fractalOptions[item], "OK");
-                    }
-                    else if (action == "Info")
-                    {
-                        await DisplayAlert("Fractal Info", "X Value (Real value on complex plane): " + varList1[setItem] + "\nY Value (Complex value on complex plane): " + varList2[setItem] + "\nSize (Length of pixel intervals): " + varList3[setItem], "OK");
-                    }
-                    else if (action == "Advanced")
-                    {
-                        carouselPage.CurrentPage = carouselPage.Children[1];
-                        riSlider.Value = varList1[setItem];
-                        ciSlider.Value = varList2[setItem];
-                        lSlider.Value = varList3[setItem];
+                            await DisplayAlert("Fractal Set", "The current set fractal is: " + fractalOptions[item], "OK");
+                        }
+                        else if (action == "Info")
+                        {
+                            await DisplayAlert("Fractal Info", "X Value (Real value on complex plane): " + varList1[setItem] + "\nY Value (Complex value on complex plane): " + varList2[setItem] + "\nSize (Length of pixel intervals): " + varList3[setItem], "OK");
+                            _continue = true;
+                        }
+                        else if (action == "Advanced")
+                        {
+                            carouselPage.CurrentPage = carouselPage.Children[1];
+                            riSlider.Value = varList1[setItem];
+                            ciSlider.Value = varList2[setItem];
+                            lSlider.Value = varList3[setItem];
+
+                        }
+   
                     }
                 }
                 else
                 {
-                    string action = await DisplayActionSheet("Fractal Actions", "Cancel", null, "Set Fractal", "Delete", "Info", "Rename", "Advanced");
-
-                    if (action == "Set Fractal")
+                    while (_continue)
                     {
-                        item = setItem;
+                        _continue = false;
+                        string action = await DisplayActionSheet("Fractal Actions", "Cancel", null, "Set Fractal", "Delete", "Info", "Rename", "Advanced");
 
-                        await DisplayAlert("Fractal Set", "The current set fractal is: " + fractalOptions[item], "OK");
-                    }
-                    else if (action == "Delete")
-                    {
-                        bool deleteCheck = await DisplayAlert("Delete", "Are you sure you would like to delete?", "OK", "Cancel");
-
-                        if (deleteCheck)
+                        if (action == "Set Fractal")
                         {
-                            var recipeDelete = SavedFractals[setItem - 13];
-                            await _connection.DeleteAsync(recipeDelete);
-                            SavedFractals.Remove(recipeDelete);
+                            item = setItem;
 
-                            if (item == setItem)
-                            {
-                                item = 0;
-                            }
+                            await DisplayAlert("Fractal Set", "The current set fractal is: " + fractalOptions[item], "OK");
                         }
-
-                        Refresh();
-
-                    }
-                    else if (action == "Info")
-                    {
-                        await DisplayAlert("Fractal Info", "X Value (Real value on complex plane): " + SavedFractals[setItem - 13].SavedReal + "\nY Value (Complex value on complex plane): " + SavedFractals[setItem - 13].SavedComplex + "\nSize (Length of pixel intervals): " + SavedFractals[setItem - 13].SavedLength, "OK");
-                    }
-                    else if (action == "Rename")
-                    {
-                        string newFractal = await DisplayPromptAsync("Rename Fractal", "What would you like to rename " + SavedFractals[setItem - 13].FractalName + "?", "OK", "Cancel", SavedFractals[setItem - 13].FractalName);
-
-                        if (newFractal != null && newFractal != "" && newFractal != SavedFractals[setItem - 13].FractalName)
+                        else if (action == "Delete")
                         {
-                            double realCache = SavedFractals[setItem - 13].SavedReal;
-                            double complexCache = SavedFractals[setItem - 13].SavedComplex;
-                            double lengthCache = SavedFractals[setItem - 13].SavedLength;
+                            bool deleteCheck = await DisplayAlert("Delete", "Are you sure you would like to delete?", "OK", "Cancel");
 
-                            var recipe = SavedFractals[setItem - 13];
-                            await _connection.DeleteAsync(recipe);
-                            SavedFractals.Remove(recipe);
+                            if (deleteCheck)
+                            {
+                                var recipeDelete = SavedFractals[setItem - 13];
+                                await _connection.DeleteAsync(recipeDelete);
+                                SavedFractals.Remove(recipeDelete);
 
-                            recipe = new FractalRecipe { FractalName = newFractal, SavedComplex = complexCache, SavedLength = lengthCache, SavedReal = realCache };
-
-                            await _connection.InsertAsync(recipe);
-                            SavedFractals.Add(recipe);
+                                if (item == setItem)
+                                {
+                                    item = 0;
+                                }
+                            }
 
                             Refresh();
+
                         }
-                    }
-                    else if (action == "Advanced")
-                    {
-                        carouselPage.CurrentPage = carouselPage.Children[1];
-                        riSlider.Value = SavedFractals[setItem - 13].SavedReal;
-                        ciSlider.Value = SavedFractals[setItem - 13].SavedComplex;
-                        lSlider.Value = SavedFractals[setItem - 13].SavedLength;
+                        else if (action == "Info")
+                        {
+                            await DisplayAlert("Fractal Info", "X Value (Real value on complex plane): " + SavedFractals[setItem - 13].SavedReal + "\nY Value (Complex value on complex plane): " + SavedFractals[setItem - 13].SavedComplex + "\nSize (Length of pixel intervals): " + SavedFractals[setItem - 13].SavedLength, "OK");
+                            _continue = true;
+                        }
+                        else if (action == "Rename")
+                        {
+                            string newFractal = await DisplayPromptAsync("Rename Fractal", "What would you like to rename " + SavedFractals[setItem - 13].FractalName + "?", "OK", "Cancel", SavedFractals[setItem - 13].FractalName);
+
+                            if (newFractal != null && newFractal != "" && newFractal != SavedFractals[setItem - 13].FractalName)
+                            {
+                                double realCache = SavedFractals[setItem - 13].SavedReal;
+                                double complexCache = SavedFractals[setItem - 13].SavedComplex;
+                                double lengthCache = SavedFractals[setItem - 13].SavedLength;
+
+                                var recipe = SavedFractals[setItem - 13];
+                                await _connection.DeleteAsync(recipe);
+                                SavedFractals.Remove(recipe);
+
+                                recipe = new FractalRecipe { FractalName = newFractal, SavedComplex = complexCache, SavedLength = lengthCache, SavedReal = realCache };
+
+                                await _connection.InsertAsync(recipe);
+                                SavedFractals.Add(recipe);
+
+                                Refresh();
+                            }
+                        }
+                        else if (action == "Advanced")
+                        {
+                            carouselPage.CurrentPage = carouselPage.Children[1];
+                            riSlider.Value = SavedFractals[setItem - 13].SavedReal;
+                            ciSlider.Value = SavedFractals[setItem - 13].SavedComplex;
+                            lSlider.Value = SavedFractals[setItem - 13].SavedLength;
+                        }
                     }
                 }
             }
@@ -710,7 +722,7 @@ namespace iFractal
 
         private void Refresh()
         {
-            fractalList = new List<string> { "Full Mandelbrot", "Front Half", "Crack", "Swirl", "Spiral", "Girl With Braids", "Spiky Mini Mandelbrot", "Spiky Tail", "Tunnel", "Hole", "Unconnected Julia", "Inner Hole", "Spiky Mini Mandelbrot 2" };
+            fractalList = new List<string> { "Full Mandelbrot", "Front Half", "Crack", "Swirl", "Spiral", "Girl With Braids", "Spiky Mini Mandelbrot", "Spiky Tail", "Tunnel", "Hole", "Inner Hole", "Unconnected Julia", "Twisty" };
 
             if (SavedFractals.Count > 0)
             {

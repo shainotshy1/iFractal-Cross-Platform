@@ -159,7 +159,7 @@
     <BundleResource Include="Resources\download.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon.png" />
+    <AndroidResource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\list.png" />

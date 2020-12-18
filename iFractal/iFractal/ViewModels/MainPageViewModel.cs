@@ -53,9 +53,7 @@ namespace iFractal.ViewModels
 
                 Title = "Julia Set Options";
             });
-
         }
-
         private void SwitchOptions()
         {
             double cache1 = CacheXValue;
@@ -108,5 +106,6 @@ namespace iFractal.ViewModels
         }
         public Command SwitchButton1 { get; }
         public Command SwitchButton2 { get; }
+        public Command Advanced { get; }
     }
 }

@@ -301,9 +301,10 @@ namespace iFractal
             {
                 ri = 0.2;
                 ci = 0;
+                l = 1;
             }
 
-            if (index > integer - 1)
+            else if (index > integer - 1)
             {
                 if (SavedFractals[item - integer].IsJuliaSet)
                 {
@@ -312,11 +313,15 @@ namespace iFractal
                     l = 1;
                 }
             }
-            if(index == -2)
+            else if(index == -2)
             {
                 ri = 0.2;
                 ci = 0;
                 l = 1;
+            }
+            else
+            {
+                julia = -1;
             }
 
             if (loading.Count == 0)
@@ -827,10 +832,26 @@ namespace iFractal
                     double riCache = ri;
                     double ciCache = ci;
 
-                    if (item >= 12 && item <= integer-1)
+                    if (item >= 12 && item <= 15)
                     {
                         ri = 0.2;
                         ci = 0;
+                        l = 1;
+                    }
+
+                    else if (item > integer - 1)
+                    {
+                        if (SavedFractals[item - integer].IsJuliaSet)
+                        {
+                            ri = 0.2;
+                            ci = 0;
+                            l = 1;
+                        }
+                    }
+
+                    else
+                    {
+                        julia = -1;
                     }
 
                     //Making 2x2 array with size height export and width export

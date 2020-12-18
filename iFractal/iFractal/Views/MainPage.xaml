@@ -27,7 +27,7 @@
 
                 <ImageButton Grid.Row="0" Grid.Column="0" Scale="0.33" HorizontalOptions="Start" VerticalOptions="Center" Source="settingsPicture" BackgroundColor="Transparent" Clicked="ImageButton_Clicked"/>
                 <Label Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0" Text="iFractal" FontFamily="Bellerose.ttf#Bellerose" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Scale="0.22" BackgroundColor="Transparent" Source="list" Clicked="ImageButton_Clicked_1" VerticalOptions="Center" HorizontalOptions="End" />
+                <ImageButton Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Scale="0.22" BackgroundColor="Transparent" Source="list" Clicked="ImageButton_Clicked_1" VerticalOptions="Center" HorizontalOptions="End"/>
                 <StackLayout Spacing="20" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="Center" HorizontalOptions="Center">
                 </StackLayout>
                 <BoxView Margin="10" BackgroundColor="#E9740E" VerticalOptions="End" HeightRequest="7" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
@@ -114,7 +114,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Padding="20">
-                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Title}" FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" FontSize="32"/>
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Title}" FontFamily="ComfortaaRegular.ttf#ComfortaaRegular" TextColor="White" FontSize="28"/>
                     <StackLayout Orientation="Horizontal" Padding="40,8,40,8" VerticalOptions="Center">
                         <Button BackgroundColor="Transparent" TextColor="CornflowerBlue" Text="Reset" HorizontalOptions="StartAndExpand" FontSize="Medium" VerticalOptions="Center" Clicked="ToolbarItem_Clicked"/>
                         <Button FontSize="17" Text="Create" TextColor="White" BackgroundColor="CornflowerBlue" CornerRadius="40" WidthRequest="90" HeightRequest="40" Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="Center"/>

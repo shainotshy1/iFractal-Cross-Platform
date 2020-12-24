@@ -728,11 +728,13 @@ namespace iFractal
                                 double complexCache = SavedFractals[setItem - integer].SavedComplex;
                                 double lengthCache = SavedFractals[setItem - integer].SavedLength;
 
+                                bool juliaCheck = SavedFractals[setItem - integer].IsJuliaSet;
+
                                 var recipe = SavedFractals[setItem - integer];
                                 await _connection.DeleteAsync(recipe);
                                 SavedFractals.Remove(recipe);
-
-                                recipe = new FractalRecipe { FractalName = newFractal, SavedComplex = complexCache, SavedLength = lengthCache, SavedReal = realCache };
+                                
+                                recipe = new FractalRecipe { FractalName = newFractal, SavedComplex = complexCache, SavedLength = lengthCache, SavedReal = realCache, IsJuliaSet = juliaCheck };
 
                                 await _connection.InsertAsync(recipe);
                                 SavedFractals.Add(recipe);
@@ -748,6 +750,9 @@ namespace iFractal
                             lSlider.Value = SavedFractals[setItem - integer].SavedLength;
                         }
                     }
+
+                    var btn = sender as Button;
+                    btn.Command.Execute(btn.CommandParameter);
                 }
             }
 

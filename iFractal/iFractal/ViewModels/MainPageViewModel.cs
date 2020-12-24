@@ -53,6 +53,10 @@ namespace iFractal.ViewModels
 
                 Title = "Julia Set Options";
             });
+            Test = new Command(() =>
+            {
+                Title = "Test";
+            });
         }
         private void SwitchOptions()
         {
@@ -106,6 +110,6 @@ namespace iFractal.ViewModels
         }
         public Command SwitchButton1 { get; }
         public Command SwitchButton2 { get; }
-        public Command Advanced { get; }
+        public Command Test { get; }
     }
 }
